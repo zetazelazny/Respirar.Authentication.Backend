@@ -44,7 +44,7 @@ namespace Respirar.Authentication.BackEnd.Application.CommandHandlers
                     EmailLink = $"{_configuration["MailSettings:RedirectionDomain"]}/registerconfirmation?id={result.Result.user.id}"
                 };
 
-                //_mailService.SendMail(mailData);
+                _mailService.SendMail(mailData);
 
                 var dataToCache = Encoding.UTF8.GetBytes("pending");
 
