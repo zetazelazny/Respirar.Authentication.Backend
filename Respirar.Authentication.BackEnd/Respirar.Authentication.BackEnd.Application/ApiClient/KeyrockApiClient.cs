@@ -40,8 +40,8 @@ namespace Respirar.Authentication.BackEnd.Application.ApiClient
             }
             else
             {
-                var errorResponse = await response.Content.ReadFromJsonAsync<ErrorResponse>();
-                result = ValueResult<LoginResult>.Error(errorResponse.error);
+                var errorResponse = await response.Content.ReadFromJsonAsync<string>();
+                result = ValueResult<LoginResult>.Error(errorResponse);
             }
 
             return result;
