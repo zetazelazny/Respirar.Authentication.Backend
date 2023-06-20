@@ -5,7 +5,9 @@ VisualStudioVersion = 17.2.32602.215
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Respirar.Authentication.BackEnd", "Respirar.Authentication.BackEnd\Respirar.Authentication.BackEnd.csproj", "{08F5D6AD-51C9-438B-8FF1-C2E443EF7361}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Respirar.Authentication.BackEnd.Application", "Respirar.Authentication.BackEnd.Application\Respirar.Authentication.BackEnd.Application.csproj", "{CFB15CDC-A4C0-4253-876C-B3D78D05A98E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Respirar.Authentication.BackEnd.Application", "Respirar.Authentication.BackEnd.Application\Respirar.Authentication.BackEnd.Application.csproj", "{CFB15CDC-A4C0-4253-876C-B3D78D05A98E}"
+EndProject
+Project("{E53339B2-1760-4266-BCC7-CA923CBCF16C}") = "docker-compose", "docker-compose.dcproj", "{CE239F59-D3D5-4D42-9269-0E9414A8DE1A}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,6 +23,10 @@ Global
 		{CFB15CDC-A4C0-4253-876C-B3D78D05A98E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{CFB15CDC-A4C0-4253-876C-B3D78D05A98E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{CFB15CDC-A4C0-4253-876C-B3D78D05A98E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CE239F59-D3D5-4D42-9269-0E9414A8DE1A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CE239F59-D3D5-4D42-9269-0E9414A8DE1A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CE239F59-D3D5-4D42-9269-0E9414A8DE1A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CE239F59-D3D5-4D42-9269-0E9414A8DE1A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

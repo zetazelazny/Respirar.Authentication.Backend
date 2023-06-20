@@ -1,0 +1,21 @@
+version: '3.4'
+
+networks:
+  respirar-network:
+    driver: bridge
+
+services:
+  respirar.authentication.backend:
+    image: ${DOCKER_REGISTRY-}respirarauthenticationbackend
+    build:
+      context: .
+      dockerfile: Respirar.Authentication.BackEnd/Dockerfile
+    networks:
+        - respirar-network  
+
+  redis: 
+    image: redis
+    environment:
+      - ALLOW_EMPTY_PASSWORD=yes
+    networks:
+      - respirar-network  
