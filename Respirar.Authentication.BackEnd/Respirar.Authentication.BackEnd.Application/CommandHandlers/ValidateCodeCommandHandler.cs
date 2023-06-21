@@ -19,7 +19,7 @@ namespace Respirar.Authentication.BackEnd.Application.CommandHandlers
         public async Task<ValueResult<bool>> Handle(ValidateCodeCommand command, CancellationToken cancellationToken)
         {
             var code = await _cache.GetAsync(command.code);
-
+ 
             if(code != null)
             {
                 return ValueResult<bool>.Ok(true);

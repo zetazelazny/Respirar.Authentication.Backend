@@ -44,7 +44,7 @@ namespace Respirar.Authentication.BackEnd.Application.CommandHandlers
                     EmailLink = $"{_configuration["MailSettings:RedirectionDomain"]}/registerconfirmation?id={result.Result.user.id}"
                 };
 
-                _mailService.SendMail(mailData);
+                 _mailService.SendMail(mailData);
 
                 var dataToCache = Encoding.UTF8.GetBytes("pending");
 
@@ -53,6 +53,8 @@ namespace Respirar.Authentication.BackEnd.Application.CommandHandlers
                     .SetSlidingExpiration(TimeSpan.FromMinutes(1200));
 
                 await _cache.SetAsync(result.Result.user.id, dataToCache, options);
+
+                //var vemos = await _cache.GetAsync(result.Result.user.id);
 
                 return result;
             }

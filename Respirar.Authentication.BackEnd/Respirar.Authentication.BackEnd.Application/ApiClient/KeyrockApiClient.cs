@@ -21,8 +21,10 @@ namespace Respirar.Authentication.BackEnd.Application.ApiClient
         }
 
         public async Task<ValueResult<LoginResult>> Login(LoginCommand command, CancellationToken cancellationToken)
-        {
-            ValueResult<LoginResult> result;
+        {        
+
+            ValueResult<LoginResult> result;           
+            
 
             var formData = new FormUrlEncodedContent(new[]
              {
@@ -70,8 +72,10 @@ namespace Respirar.Authentication.BackEnd.Application.ApiClient
             }
             else
             {
-                var errorResponse = await response.Content.ReadFromJsonAsync<ErrorResponse>();
-                result = ValueResult<UserRegisterResult>.Error(errorResponse.error);
+                var errorResponse = await response.Content.ReadFromJsonAsync<string>();
+                result = ValueResult<UserRegisterResult>.Error(errorResponse);
+
+
             }
 
             return result;                        
@@ -96,8 +100,8 @@ namespace Respirar.Authentication.BackEnd.Application.ApiClient
             }
             else
             {
-                var errorResponse = await response.Content.ReadFromJsonAsync<ErrorResponse>();
-                result = ValueResult<String>.Error(errorResponse.error);
+                var errorResponse = await response.Content.ReadFromJsonAsync<string>();
+                result = ValueResult<String>.Error(errorResponse);
             }
 
             return result;
@@ -164,8 +168,8 @@ namespace Respirar.Authentication.BackEnd.Application.ApiClient
             {
 
                 // ERROR DE DESERIALIZACION
-                var errorResponse = await response.Content.ReadFromJsonAsync<ErrorResponse>();
-                result = ValueResult<UpdatePasswordResult>.Error(errorResponse.error);
+                var errorResponse = await response.Content.ReadFromJsonAsync<string>();
+                result = ValueResult<UpdatePasswordResult>.Error(errorResponse);
             }
 
             return result;                        
